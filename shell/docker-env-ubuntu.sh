@@ -37,11 +37,11 @@ apt-get -qy install \
   lsb-release
 echo "[OK] 安装前置依赖库"
 
-# 添加docker官方GPG key
+# 添加docker阿里源的GPG key
 curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo "[OK] 添加gpg key"
 
-# 设置docker源
+# 设置docker源为阿里源
 echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu/ \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -51,7 +51,4 @@ echo "[OK] 设置docker源"
 apt-get -q update
 apt-get -qy install docker-ce docker-ce-cli containerd.io
 
-echo "All Done"
-echo "All Done"
-echo "All Done"
 echo "All Done"
