@@ -55,4 +55,5 @@ apt-get -qy install docker-ce docker-ce-cli containerd.io
 usermod -aG docker $USER
 newgrp docker
 
-echo "All Done"
+echo ""
+echo "All Done ^_^"
