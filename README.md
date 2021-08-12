@@ -14,3 +14,9 @@
 wget -O - https://raw.githubusercontent.com/jht6/scripts/main/shell/docker-env-ubuntu.sh | sudo bash
 ```
 
+
+一键搭建mongodb服务：
+
+```sh
+wget -O - https://raw.githubusercontent.com/jht6/scripts/main/shell/docker-mongo-ubuntu.sh | sudo bash
+```
