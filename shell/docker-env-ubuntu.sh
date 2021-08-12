@@ -57,3 +57,4 @@ newgrp docker
 
 echo ""
 echo "All Done ^_^"
+echo "Tips: 重启设备后即可省略docker命令的sudo"
