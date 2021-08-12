@@ -52,8 +52,7 @@ apt-get -q update
 apt-get -qy install docker-ce docker-ce-cli containerd.io
 
 # 将用户名加入docker组
-groupadd docker
-usermod -aG docker $USER
+usermod -aG docker $SUDO_USER # 因为是sudo执行，$USER是root
 newgrp docker
 
 echo ""
