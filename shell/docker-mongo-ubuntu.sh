@@ -10,4 +10,4 @@ docker run -d -p 27017:27017 -v mongo_configdb:/data/configdb -v mongo_db:/data/
 echo "[OK] 已启动mongo服务"
 
 echo "可执行以下命令启动mongo shell:"
-echo "docker exec -it mongo mongo admin"
+echo "  docker exec -it mongo mongo admin"
