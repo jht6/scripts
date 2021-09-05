@@ -1,10 +1,17 @@
 # scripts
 
-## docker-env-ubuntu.sh
-
 测试环境：
 - ubuntu 20.04
 - Oracle VirtualBox 6.0.8
+
+## init-ubuntu.sh
+
+```sh
+https_proxy=https://192.168.2.47:1080 wget -O- https://raw.githubusercontent.com/jht6/scripts/main/shell/init-ubuntu.sh | https_proxy=https://192.168.2.47:1080 bash
+```
+
+
+## docker-env-ubuntu.sh
 
 一键搭建docker环境，使用方法：
 
