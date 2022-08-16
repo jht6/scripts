@@ -7,7 +7,7 @@
 ## init-ubuntu.sh
 
 ```sh
-https_proxy=https://192.168.2.47:1080 wget -O- https://raw.githubusercontent.com/jht6/scripts/main/shell/init-ubuntu.sh | https_proxy=https://192.168.2.47:1080 bash
+wget -O- https://gitee.com/jht6/scripts/raw/main/shell/init-ubuntu.sh | bash
 ```
 
 
@@ -18,12 +18,12 @@ https_proxy=https://192.168.2.47:1080 wget -O- https://raw.githubusercontent.com
 1. 执行 `sudo ls`并输入密码
 2. 执行以下命令
 ```sh
-wget -O - https://raw.githubusercontent.com/jht6/scripts/main/shell/docker-env-ubuntu.sh | sudo bash
+wget -O - https://gitee.com/jht6/scripts/raw/main/shell/docker-env-ubuntu.sh | sudo bash
 ```
 
 
 一键搭建mongodb服务：
 
 ```sh
-wget -O - https://raw.githubusercontent.com/jht6/scripts/main/shell/docker-mongo-ubuntu.sh | sudo bash
+wget -O - https://gitee.com/jht6/scripts/raw/main/shell/docker-mongo-ubuntu.sh | sudo bash
 ```
