@@ -1,5 +1,5 @@
 #!/bin/bash
-# 将刚安装的ubuntu初始化为好用的状态
+# 基于ubuntu搭建开发环境
 # vmware环境下需要先执行：
 # sudo apt update && sudo apt install -qy open-vm-tools open-vm-tools-desktop && reboot
 
@@ -33,7 +33,7 @@ echo "[OK] 替换apt源为ali源"
 
 # 安装一些常用软件
 sudo apt update
-sudo apt install -qy vim curl net-tools git traceroute
+sudo apt install -y vim curl net-tools git traceroute
 echo "[OK] 安装vim curl net-tools"
 
 # 安装nodejs v16
@@ -46,7 +46,20 @@ sudo ln -s $(pwd)/nodejs_16/bin/node /usr/local/bin
 sudo ln -s $(pwd)/nodejs_16/bin/npm /usr/local/bin
 sudo ln -s $(pwd)/nodejs_16/bin/npx /usr/local/bin
 
+# 设置npm源
+npm config set registry https://npmmirror.com/mirrors/node/
+
 # 安装启用ssh
 sudo apt update
 sudo apt install -qy openssh-server
 sudo ufw allow ssh # 防火墙放通
+
+# 设置常用别名
+echo "alias l='ls -lha'" >> /home/$SUDO_USER/.bashrc
+echo "alias ll='ls -lha'" >> /home/$SUDO_USER/.bashrc
+echo "alias dk='docker'" >> /home/$SUDO_USER/.bashrc
+echo "alias dkc='docker container'" >> /home/$SUDO_USER/.bashrc
+echo "alias dki='docker image'" >> /home/$SUDO_USER/.bashrc
+echo "set number" > /home/$SUDO_USER/.vimrc
+
+# 安装go
