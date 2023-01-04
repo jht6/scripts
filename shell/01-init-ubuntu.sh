@@ -1,11 +1,18 @@
 #!/bin/bash
-# 基于ubuntu搭建开发环境
+# 基于Ubuntu 20.04.2 LTS 搭建开发环境
+
 # vmware环境下需要先执行：
 # sudo apt update && sudo apt install -qy open-vm-tools open-vm-tools-desktop && reboot
+
+# ############### IMPORTANT ###############
+# 必须进入到 shell 目录，用 sudo bash 执行
+# #########################################
 
 set -ex
 
 echo "init-ubuntu.sh starts..."
+
+exec_dir=$(pwd)
 
 # 备份sources.list
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
@@ -45,6 +52,7 @@ mv node-v16.15.1-linux-x64 nodejs_16
 sudo ln -s $(pwd)/nodejs_16/bin/node /usr/local/bin
 sudo ln -s $(pwd)/nodejs_16/bin/npm /usr/local/bin
 sudo ln -s $(pwd)/nodejs_16/bin/npx /usr/local/bin
+cd $exec_dir
 
 # 设置npm源
 npm config set registry https://npmmirror.com/mirrors/node/
@@ -62,4 +70,10 @@ echo "alias dkc='docker container'" >> /home/$SUDO_USER/.bashrc
 echo "alias dki='docker image'" >> /home/$SUDO_USER/.bashrc
 echo "set number" > /home/$SUDO_USER/.vimrc
 
+
 # 安装go
+wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz
+sudo tar -zxf ./go1.19.4.linux-amd64.tar.gz -C /usr/local
+rm ./go1.19.4.linux-amd64.tar.gz
+sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
+sudo ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
