@@ -77,3 +77,7 @@ sudo tar -zxf ./go1.19.4.linux-amd64.tar.gz -C /usr/local
 rm ./go1.19.4.linux-amd64.tar.gz
 sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
 sudo ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+
+# 设置go加速镜像
+echo "go env -w GO111MODULE=on" >> /home/$SUDO_USER/.bashrc
+echo "go env -w GOPROXY=https://goproxy.cn,direct" >> /home/$SUDO_USER/.bashrc
