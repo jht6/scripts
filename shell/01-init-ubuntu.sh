@@ -1,7 +1,7 @@
 #!/bin/bash
 # 基于Ubuntu 20.04.2 LTS 搭建开发环境
 
-# vmware环境下需要先执行：
+# vmware环境下需要先执行以下命令安装增强工具,然后就可以向vm拖入代码文件了：
 # sudo apt update && sudo apt install -qy open-vm-tools open-vm-tools-desktop && reboot
 
 # ############### IMPORTANT ###############
