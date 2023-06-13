@@ -70,9 +70,11 @@ echo "alias dkc='docker container'" >> /home/$SUDO_USER/.bashrc
 echo "alias dki='docker image'" >> /home/$SUDO_USER/.bashrc
 echo "set number" > /home/$SUDO_USER/.vimrc
 
-# 设置go加速镜像
+# 设置go加速镜像及环境变量
 echo "go env -w GO111MODULE=on" >> /home/$SUDO_USER/.bashrc
 echo "go env -w GOPROXY=https://goproxy.cn,direct" >> /home/$SUDO_USER/.bashrc
+echo 'export GOPATH="/home/jht/go"' >> /home/$SUDO_USER/.bashrc
+echo 'export PATH=$PATH:$GOPATH/bin' >> /home/$SUDO_USER/.bashrc
 
 # 安装go
 wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz
