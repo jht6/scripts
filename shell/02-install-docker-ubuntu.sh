@@ -1,6 +1,6 @@
 #!/bin/bash
 # 在ubuntu内安装docker
-# 前置依赖：需先执行过 init-ubuntu.sh
+# 前置依赖：需先执行过 01-init-ubuntu.sh
 
 set -ex
 
