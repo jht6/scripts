@@ -10,7 +10,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 echo "[OK] 安装docker-compose";
 
 # 安装必要依赖
-apt -q update
 apt -qy install \
   apt-transport-https \
   ca-certificates \
@@ -32,6 +31,9 @@ echo "[OK] 设置docker源"
 # 安装docker
 apt -q update
 apt -qy install docker-ce docker-ce-cli containerd.io
+
+# 设置镜像源, 需重启系统后生效
+sudo cp ../file/daemon.json /etc/docker/daemon.json
 
 # 将用户名加入docker组
 usermod -aG docker $SUDO_USER # 因为是sudo执行，$USER是root

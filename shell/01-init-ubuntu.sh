@@ -77,8 +77,8 @@ echo 'export GOPATH="/home/jht/go"' >> /home/$SUDO_USER/.bashrc
 echo 'export PATH=$PATH:$GOPATH/bin' >> /home/$SUDO_USER/.bashrc
 
 # 安装go
-wget --no-check-certificate https://go.dev/dl/go1.19.4.linux-amd64.tar.gz
-sudo tar -zxf ./go1.19.4.linux-amd64.tar.gz -C /usr/local
-rm ./go1.19.4.linux-amd64.tar.gz
+wget --no-check-certificate https://studygolang.com/dl/golang/go1.19.10.linux-amd64.tar.gz
+sudo tar -zxf ./go1.19.10.linux-amd64.tar.gz -C /usr/local
+rm ./go1.19.10.linux-amd64.tar.gz
 sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
 sudo ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
