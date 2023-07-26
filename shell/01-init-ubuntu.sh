@@ -68,6 +68,14 @@ echo "alias ll='ls -lha'" >> /home/$SUDO_USER/.bashrc
 echo "alias dk='docker'" >> /home/$SUDO_USER/.bashrc
 echo "alias dkc='docker container'" >> /home/$SUDO_USER/.bashrc
 echo "alias dki='docker image'" >> /home/$SUDO_USER/.bashrc
+echo "alias ggco='git checkout'" >> /home/$SUDO_USER/.bashrc
+echo "alias ggci='git commit'" >> /home/$SUDO_USER/.bashrc
+echo "alias ggst='git status'" >> /home/$SUDO_USER/.bashrc
+echo "alias ggps='git push'" >> /home/$SUDO_USER/.bashrc
+echo "alias ggpl='git pull'" >> /home/$SUDO_USER/.bashrc
+echo "alias ggad='git add'" >> /home/$SUDO_USER/.bashrc
+echo "alias gglo='git log --oneline'" >> /home/$SUDO_USER/.bashrc
+echo "alias gglg='git log'" >> /home/$SUDO_USER/.bashrc
 echo "set number" > /home/$SUDO_USER/.vimrc
 
 # 设置go加速镜像及环境变量
