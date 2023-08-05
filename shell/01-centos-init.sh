@@ -14,6 +14,11 @@ exec_dir=$(pwd)
 
 cat ../file/bashrc >> ~/.bashrc
 
+# 设置ali源
+mv  /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+yum makecache
+
 # 安装 nodejs v16
 cd /usr/local
 wget https://registry.npmmirror.com/-/binary/node/latest-v16.x/node-v16.15.1-linux-x64.tar.gz
