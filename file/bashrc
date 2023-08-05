@@ -1,0 +1,35 @@
+function git_branch {
+   branch="`git branch 2>/dev/null | grep "^\*" | sed -e "s/^\*\ //"`"
+   if [ "${branch}" != "" ];then
+       if [ "${branch}" = "(no branch)" ];then
+           branch="(`git rev-parse --short HEAD`...)"
+       fi
+       echo " ($branch)"  
+   fi
+}
+
+# 调整命令提示符
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;36m\]$(git_branch) \[\033[00m\]\$ '
+
+# 常用别名
+alias l='ls -lha'
+alias ll='ls -lha'
+alias dk='docker'
+alias dkc='docker container'
+alias dki='docker image'
+alias ggco='git checkout'
+alias ggci='git commit'
+alias ggst='git status'
+alias ggps='git push'
+alias ggpl='git pull'
+alias ggad='git add'
+alias gglo='git log --oneline'
+alias gglg='git log'
+
+# 设置go加速镜像及环境变量
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn,direct
+export GOPATH="/root/go"
+export PATH=$PATH:$GOPATH/bin
+
+# 必须以空行结尾
