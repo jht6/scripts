@@ -56,3 +56,9 @@ source ~/.bashrc
 cd $exec_dir
 rm -rf git-2.23.0
 rm git-2.23.0.tar.xz
+
+# TODO install nginx
+
+# 关闭防火墙
+systemctl stop firewalld.service
+systemctl disable firewalld.service
