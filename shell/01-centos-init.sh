@@ -41,3 +41,18 @@ sudo tar -zxf ./go1.19.10.linux-amd64.tar.gz -C /usr/local
 rm ./go1.19.10.linux-amd64.tar.gz
 sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
 sudo ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+
+# 移除旧版git, 安装新git
+yum -y remove git
+yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc
+yum -y install  gcc perl-ExtUtils-MakeMaker
+wget --no-check-certificate https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.23.0.tar.xz
+tar -xvf git-2.23.0.tar.xz
+cd git-2.23.0
+make prefix=/usr/local/git all
+make prefix=/usr/local/git install
+echo "export PATH=\$PATH:/usr/local/git/bin" >> ~/.bashrc
+source ~/.bashrc
+cd $exec_dir
+rm -rf git-2.23.0
+rm git-2.23.0.tar.xz
