@@ -104,3 +104,5 @@ http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
     | sudo tee /etc/apt/sources.list.d/nginx.list
 sudo apt update
 sudo apt install nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
