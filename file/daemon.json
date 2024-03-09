@@ -1,6 +1,5 @@
 {
   "registry-mirrors": [
-    "https://mirror.baidubce.com",
-    "https://hub-mirror.c.163.com"
+    "http://mirrors.ustc.edu.cn"
   ]
 }
