@@ -31,7 +31,7 @@ sudo ln -s $(pwd)/nodejs_16/bin/npx /usr/local/bin
 cd $exec_dir
 
 # 设置npm源
-npm config set registry https://npmmirror.com/mirrors/node/
+npm config set registry https://registry.npmmirror.com
 
 echo "set number" > ~/.vimrc
 
