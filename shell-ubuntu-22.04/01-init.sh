@@ -53,9 +53,7 @@ wget https://registry.npmmirror.com/-/binary/node/latest-v20.x/node-v20.11.1-lin
 tar -xvf node-v20.11.1-linux-x64.tar.gz
 rm node-v20.11.1-linux-x64.tar.gz
 mv node-v20.11.1-linux-x64 nodejs_v20
-sudo ln -s $(pwd)/nodejs_v20/bin/node /usr/local/bin
-sudo ln -s $(pwd)/nodejs_v20/bin/npm /usr/local/bin
-sudo ln -s $(pwd)/nodejs_v20/bin/npx /usr/local/bin
+echo 'export PATH=$PATH:$(pwd)/nodejs_v20/bin' >> /home/$SUDO_USER/.bashrc
 cd $exec_dir
 
 # 设置npm源
