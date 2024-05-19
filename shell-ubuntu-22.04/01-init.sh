@@ -104,3 +104,6 @@ sudo apt update
 sudo apt install nginx
 sudo systemctl enable nginx
 sudo systemctl start nginx
+
+# 安装 rust/cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
