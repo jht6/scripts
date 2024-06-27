@@ -44,7 +44,7 @@ echo "[OK] 替换apt源为ali源"
 
 # 安装一些常用软件
 sudo apt update
-sudo apt install -y vim curl net-tools git traceroute
+sudo apt install -y vim curl net-tools git traceroute build-essential
 echo "[OK] 安装 vim curl net-tools git 等"
 
 # 安装nodejs v20
@@ -53,7 +53,9 @@ wget https://registry.npmmirror.com/-/binary/node/latest-v20.x/node-v20.11.1-lin
 tar -xvf node-v20.11.1-linux-x64.tar.gz
 rm node-v20.11.1-linux-x64.tar.gz
 mv node-v20.11.1-linux-x64 nodejs_v20
-echo 'export PATH=$PATH:$(pwd)/nodejs_v20/bin' >> /home/$SUDO_USER/.bashrc
+sudo ln -s $(pwd)/nodejs_v20/bin/node /usr/local/bin
+sudo ln -s $(pwd)/nodejs_v20/bin/npm /usr/local/bin
+sudo ln -s $(pwd)/nodejs_v20/bin/npx /usr/local/bin
 cd $exec_dir
 
 # 设置npm源
@@ -106,4 +108,5 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 
 # 安装 rust/cargo
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# TODO 使用普通用户安装
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
